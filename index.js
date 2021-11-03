@@ -58,14 +58,14 @@ inputEnviar.onclick = () => {
     nuevaOperacion.categoria = categoria.value;
     console.log(nuevaOperacion);
 
-    convertirOperacionAHTML(nuevaOperacion);
+    mostrarOperacionEnHTML(nuevaOperacion);
 
     guardarEnLocalStorage(nuevaOperacion, "nueva_operacion");
 }
 
-// Mostrar nueva operacion en HTML
+// Mostrar operacion en HTML
 
-const convertirOperacionAHTML = (objeto) => {
+const mostrarOperacionEnHTML = (objeto) => {
     contenedorDatosUsuario.innerHTML = `
     <p>${objeto.descripcion}</p>
     <p>${objeto.monto}</p>
@@ -74,5 +74,5 @@ const convertirOperacionAHTML = (objeto) => {
     `;
 }
 
-convertirOperacionAHTML(leerDesdeLocalStorage("nueva_operacion"));
+mostrarOperacionEnHTML(leerDesdeLocalStorage("nueva_operacion"));
 
